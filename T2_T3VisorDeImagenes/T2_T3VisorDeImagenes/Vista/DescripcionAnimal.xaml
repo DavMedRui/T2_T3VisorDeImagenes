@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_T3VisorDeImagenes.Vista.DescripcionAnimal"
+             Title="DescripcionAnimal">
+    <VerticalStackLayout>
+        <Label 
+            Text="Descripción del Animal"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Image 
+            Source ="{Binding Imagen}"
+            WidthRequest="200" 
+            HeightRequest="200"
+            />
+        <Label 
+            Text="{Binding Nombre}"
+            FontSize="Title" 
+            FontAttributes="Bold"
+            />
+        <Label
+            Text="{Binding Descripcion}"
+            FontSize="Default"
+            FontAttributes="Italic"
+            />
+        <Label Text="{Binding Fecha, StringFormat='{0:dddd, dd MMMM yyyy}'}" 
+               FontSize="16" 
+               TextColor="Gray"/>
+    </VerticalStackLayout>
+</ContentPage>

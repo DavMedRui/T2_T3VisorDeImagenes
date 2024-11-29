@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_T3VisorDeImagenes.Vista.NuevoAnimal"
+             Title="NuevoAnimal">
+    <VerticalStackLayout>
+        <Label 
+            Text="Creación de un nuevo animal"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Title"/>
+
+        <HorizontalStackLayout
+            Padding="15">
+            <Label
+                Text="Introduce el nombre del animal: "
+                />
+            <Entry x:Name="txtNombre"
+                Placeholder="Escribe aquí el nombre"
+                 />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Padding="15">
+            <Label
+                Text="Introduce una descripción: "
+                />
+            <Entry x:Name="txtDescripcion"
+                Placeholder="Escribe una descripción"
+                />
+            </HorizontalStackLayout>
+        <Image
+            x:Name="imagenSeleccionada" 
+            WidthRequest="100" 
+            HeightRequest="100"
+            HorizontalOptions="Start"/>
+
+        <HorizontalStackLayout
+            Padding="15">
+            <Label
+                Text="Pulsa para insertar imagen: "
+                />
+            <Button
+                x:Name="btnInsertaImagen"
+                Text="Insertar"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnInsertarClicked"
+                />
+        </HorizontalStackLayout>
+
+        <Button
+            x:Name="btnAniadirAnimal"
+            Text="Guardar"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Clicked="OnAniadirAnimalClicked"
+            />
+    </VerticalStackLayout>
+</ContentPage>

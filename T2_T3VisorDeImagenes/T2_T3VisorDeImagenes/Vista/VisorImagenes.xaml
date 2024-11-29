@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_T3VisorDeImagenes.Vista.VisorImagenes"
+             Title="VisorImagenes">
+    <ScrollView
+    VerticalOptions="FillAndExpand">
+        <StackLayout>
+            
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label 
+            Text="Visor de imágenes"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+
+        
+        
+        <ListView x:Name="lista"
+                  SelectionMode="Single"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="Blue"
+                  ItemTapped="OnSeleccionadoTapped"
+                  ItemsSource="{Binding Animales}"
+                  >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="4"
+                                Source="{Binding Imagen}"
+                                Aspect="AspectFill"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+                            <Label Grid.Column="1"
+                                Text="{Binding Nombre}"
+                                FontAttributes="Bold" />
+                            <Label Grid.Row="2"
+                                Grid.Column="1"
+                                Text="Pulsa para ver más información"
+                                FontAttributes="Italic"
+                                VerticalOptions="End" />
+                            
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+        <Button
+            x:Name="btnAniadirAnimal"
+            Text="Nuevo animal"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Clicked="OnAniadirClicked"
+        />
+
+        
+
+    </VerticalStackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
